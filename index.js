@@ -14,7 +14,7 @@ function promise(getter, next) {
     next(null, item);
   });
   return function (fn) {
-    if (item !== null) return fn(item);
+    if (item !== null) return fn(item, true);
     waiting.push(fn);
   };
 }
